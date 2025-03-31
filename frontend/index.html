@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastReed</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FastReed</h1>
+            <p class="slogan">Читайте быстрее, понимайте лучше</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="drop-zone" id="dropZone">
+                    <p>Перетащите книгу сюда</p>
+                    <p>или</p>
+                    <input type="file" id="fileInput" accept=".pdf,.epub,.txt,.docx" hidden>
+                    <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                        Выбрать файл
+                    </button>
+                    <p class="supported-formats">Поддерживаемые форматы: PDF, EPUB, TXT, DOCX</p>
+                </div>
+            </div>
+
+            <div class="reading-modes" id="readingModes" style="display: none;">
+                <h2>Выберите режим чтения</h2>
+                <div class="mode-buttons">
+                    <button class="mode-btn" onclick="startBionicReading()">Бионическое чтение</button>
+                    <button class="mode-btn" onclick="startRSVPReading()">RSVP чтение</button>
+                </div>
+            </div>
+
+            <div class="reader-container" id="readerContainer" style="display: none;">
+                <div class="reader-controls">
+                    <button onclick="togglePause()" id="pauseBtn">Пауза</button>
+                    <button onclick="adjustSpeed(-50)" id="speedDownBtn">-</button>
+                    <span id="speedDisplay">300мс</span>
+                    <button onclick="adjustSpeed(50)" id="speedUpBtn">+</button>
+                </div>
+                <div id="readerContent"></div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
