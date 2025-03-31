@@ -5,8 +5,8 @@ from telegram.ext import Application, CommandHandler, ContextTypes
 # Токен бота
 TOKEN = "8169386170:AAE02ChmwMkfGDsZMvdRtq8n6OVrIQp8Ig0"
 
-# URL фронтенда (замените на ваш URL после деплоя)
-FRONTEND_URL = "https://your-app-name.vercel.app"
+# URL фронтенда
+FRONTEND_URL = "https://fastreed-4xcekvvccnyypqbbjbrpoqn4yw1b.vercel.app"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Отправляет сообщение с кнопкой для открытия WebApp."""

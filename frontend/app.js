@@ -6,8 +6,8 @@ let currentSpeed = 300;
 let currentWordIndex = 0;
 let words = [];
 
-// URL бэкенда (замените на ваш URL)
-const BACKEND_URL = "http://localhost:8000";
+// URL бэкенда
+const BACKEND_URL = "https://web-production-8f23.up.railway.app";
 
 // Инициализация Telegram WebApp
 document.addEventListener('DOMContentLoaded', function() {
@@ -63,7 +63,7 @@ async function handleFile(file) {
         currentText = data.text;
         
         // Показываем режимы чтения
-        document.getElementById('upload-section').style.display = 'none';
+        document.querySelector('.upload-section').style.display = 'none';
         document.getElementById('reading-modes').style.display = 'block';
     } catch (error) {
         alert('Ошибка загрузки файла: ' + error.message);
@@ -105,7 +105,7 @@ async function startRSVPReading() {
             },
             body: JSON.stringify({ 
                 text: currentText,
-                speed: currentSpeed
+                speed: currentSpeed / 1000  // Конвертируем миллисекунды в секунды
             })
         });
         
